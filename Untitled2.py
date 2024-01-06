@@ -22,8 +22,8 @@ def format_description(row):
     bill = row.get('bill', '')
     region = row.get('region', '')
 
-    return (f"Пользователь {row.get('name', '')} {sex}, {age} возраст покупателя: {bill} сумма: "
-            f"с {device} браузера {browser}. Регион, где выполнилась покупка: {region}.")
+    return (f"Пользователь {row.get('name', '')} {sex}, {age} возраст : {bill} сумма: "
+            f"с {device} браузер {browser}. Регион покупки: {region}.")
 
 
 def write_descriptions_to_file(descriptions, output_file_path):
