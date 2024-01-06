@@ -13,8 +13,8 @@ def read_csv_data(file_path):
 
 
 def format_description(row):
-    sex_map = {'female': 'женского пола', 'male': 'мужского пола'}
-    sex = sex_map.get(row.get('sex', ''), 'неопределенного пола')
+    sex_map = {'female': 'женский', 'male': 'мужской'}
+    sex = sex_map.get(row.get('sex', ''), 'неизвестного пола')
 
     age = row.get('age', 'неизвестного возраста')
     device = row.get('device_type', '')
@@ -22,8 +22,8 @@ def format_description(row):
     bill = row.get('bill', '')
     region = row.get('region', '')
 
-    return (f"Пользователь {row.get('name', '')} {sex}, {age} лет выполнил(а) покупку на {bill} у.е. "
-            f"с {device} браузера {browser}. Регион, из которого выполнилась покупка: {region}.")
+    return (f"Пользователь {row.get('name', '')} {sex}, {age} возраст покупателя: {bill} сумма: "
+            f"с {device} браузера {browser}. Регион, где выполнилась покупка: {region}.")
 
 
 def write_descriptions_to_file(descriptions, output_file_path):
